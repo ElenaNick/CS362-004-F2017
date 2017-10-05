@@ -7,5 +7,6 @@ remodel were refactored into separate functions (smithyCase(), adventurerCase(),
 etc.)
 
 Introducing bugs:
-bugs were intentionally introduced to adventureCase(), smithyCase(), 
+bugs were intentionally introduced to adventureCase(), smithyCase(), feastCase(),
+and council_roomCase()
  
