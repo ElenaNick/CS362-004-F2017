@@ -663,18 +663,18 @@ int adventurerCase(struct gameState *state, int currentPlayer, int temphand[])
 	  z++;
 	}
   }
-  while(z-1>=0){
+  while(z-1>0){
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
-      }
-      return 0;
+  }
+  return 0;
 }
 
 int smithyCase(struct gameState *state, int currentPlayer, int handPos)
 {
     int i;
     //+3 Cards
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -720,7 +720,7 @@ int feastCase(struct gameState *state, int currentPlayer, int choice1, int temph
 	      printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
 	    }
 
-	    gainCard(choice1, state, 0, currentPlayer);//Gain the card
+	    gainCard(choice1, state, 2, currentPlayer);//Gain the card
 	    x = 0;//No more buying cards
 
 	    if (DEBUG){
@@ -783,7 +783,7 @@ int council_roomCase(int currentPlayer, struct gameState *state, int handPos)
     //Each other player draws a card
     for (i = 0; i < state->numPlayers; i++)
 	{
-	  if ( i != currentPlayer )
+	  if ( i == currentPlayer )
 	  {
 	    drawCard(i, state);
 	  }
