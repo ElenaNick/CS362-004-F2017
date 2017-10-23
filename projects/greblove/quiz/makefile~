@@ -1,0 +1,7 @@
+testme:
+	gcc -Wall testme.c -o testme -coverage 
+	./testme
+	gcov -b testme.c
+
+clean:
+	rm -f testme
