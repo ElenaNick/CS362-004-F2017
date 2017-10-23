@@ -1,12 +1,8 @@
 Elena Greblova
-Assignment 2.
+Assignment 3.
 dominion.c was changed:
-Refactoring:
-in cardEffect() function cases for adventurer, smithy, feast, council room, and
-remodel were refactored into separate functions (smithyCase(), adventurerCase(),
-etc.)
+I found the bug I introduced in the assignment 2 and fixed it.
 
-Introducing bugs:
-bugs were intentionally introduced to adventureCase(), smithyCase(), feastCase(),
-and council_roomCase()
- 
+Unit testing:
+unit tests for 4 functions and 4 cards were added.
+Makefile was modified to run the unit tests and collect the coverage

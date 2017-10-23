@@ -1,0 +1,295 @@
+-----Results for running unit tests on dominion.c-----
+unittest1.c:
+---------------Testing shuffle() function-----------
+TEST 1: non-empty deck shuffle
+Returned value is 0: PASSED
+Card number in the deck didn't change: PASSED
+Deck of player 0 is shuffled: PASSED
+No other changes to the game state: PASSED
+No new cards introduced to the deck: PASSED
+
+TEST 2: empty deck shuffle
+Returned value is -1: PASSED
+No changes to the game state: PASSED
+
+Total errors in function shuffle(): 0
+
+File 'dominion.c'
+Lines executed:16.31% of 558
+Branches executed:15.83% of 417
+Taken at least once:13.19% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+
+---------------Testing fullDeckCount() function-----------
+TEST 1: total cards count is 0
+Returned value is 0: PASSED
+No changes to game state: PASSED
+
+TEST 2: all cards are the required one
+Returned value is 30: PASSED
+No changes to game state: PASSED
+
+TEST 3: half of cards are the required one
+Returned value is 15: PASSED
+No changes to game state: PASSED
+
+TEST 4: all cards are in on pile.
+Cards are in deck. Returned value is 5: PASSED
+No changes to game state: PASSED
+Cards are in hand. Returned value is 5: PASSED
+No changes to game state: PASSED
+Cards are in discard. Returned value is 5: PASSED
+No changes to game state: PASSED
+
+Total errors in fullDeckCount(): 0
+
+File 'dominion.c'
+Lines executed:18.10% of 558
+Branches executed:18.71% of 417
+Taken at least once:16.31% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+
+---------------Testing scoreFor() function-----------
+TEST 1: score count with only certain victory cards present
+Curse cards only:
+PASSED in hand
+FAILED in deck
+FAILED in discard
+FAILED in total
+No changes to game state: PASSED
+Estate cards only:
+PASSED in hand
+FAILED in deck
+FAILED in discard
+FAILED in total
+No changes to game state: PASSED
+Duchy cards only:
+PASSED in hand
+FAILED in deck
+FAILED in discard
+FAILED in total
+No changes to game state: PASSED
+Province cards only:
+PASSED in hand
+FAILED in deck
+FAILED in discard
+FAILED in total
+No changes to game state: PASSED
+Great_hall cards only:
+PASSED in hand
+FAILED in deck
+FAILED in discard
+FAILED in total
+No changes to game state: PASSED
+Gardens cards only:
+FAILED in hand
+FAILED in deck
+FAILED in discard
+FAILED in total
+No changes to game state: PASSED
+
+TEST 2: score count with different victory cards present
+Returned score is correct: FAILED
+No changes to game state: PASSED
+
+Total errors in scoreFor(): 20
+
+File 'dominion.c'
+Lines executed:22.40% of 558
+Branches executed:28.78% of 417
+Taken at least once:26.38% of 417
+Calls executed:10.53% of 95
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+
+---------------Testing buyCard() function-----------
+TEST 1: conditions when purchase cannot be made
+Number of buys = 0: PASSED
+Supply count = 0: PASSED
+Not enough coins for purchase: PASSED
+
+TEST 2: valid card purchase
+Returned value 0: PASSED
+Number of buys decreased by 1: PASSED
+Number of coins decreased by the card value: PASSED
+An adventurer card was added to discard: PASSED
+Supply count decreased by 1: PASSED
+Discard count increased by 1: PASSED
+No changes in game state except required ones: PASSED
+
+Total errors in function buyCard(): 0
+
+File 'dominion.c'
+Lines executed:27.06% of 558
+Branches executed:38.37% of 417
+Taken at least once:28.78% of 417
+Calls executed:15.79% of 95
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+
+---------------Testing adventurerCase() function-----------
+TEST 1: Deck count is 0, no treasure cards in the discard
+No changes to the game state: FAILED
+
+TEST 2: Deck is not empty, but doesn't have treasure coins. Discard = 0
+Deck count s 0: PASSED
+Hand count didnt change: FAILED
+Discard is previous deck count: FAILED
+Cards in all 3 piles changed/not changed accordinly: 
+PASSED in hand
+PASSED in deck
+FAILED in discard
+No other changes in game state: PASSED
+
+TEST 3: Deck is not empty, 1 treasure card in the deck
+Case copper.
+Deck count is 0: PASSED
+Hand count increased by 1: PASSED
+Discard count is previous deck count - 1: FAILED
+No new cards in the deck: PASSED
+Discard has all non-copper cards from deck: PASSED
+No new cards in hand except 1 copper: PASSED
+No other changes in game state: PASSED
+Case silver.
+Deck count is 0: PASSED
+Hand count increased by 1: PASSED
+Discard count is previous deck count - 1: FAILED
+No new cards in the deck: PASSED
+Discard has all non-silver cards from deck: PASSED
+No new cards in hand except 1 silver: PASSED
+No other changes in game state: PASSED
+Case gold.
+Deck count is 0: PASSED
+Hand count increased by 1: PASSED
+Discard count is previous deck count - 1: FAILED
+No new cards in the deck: PASSED
+Discard has all non-gold cards from deck: PASSED
+No new cards in hand except 1 gold: PASSED
+No other changes in game state: PASSED
+
+TEST 4: Deck is not empty, 5 treasure card in the deck
+Deck count decreased by 3: PASSED
+Hand count increased by 2: PASSED
+Discard count increased by 1: FAILED
+No new cards in the deck: FAILED
+One new card in discard from the deck: PASSED
+No new cards in hand except 2 silver: FAILED
+No other changes in game state: PASSED
+File 'dominion.c'
+Lines executed:34.23% of 558
+Branches executed:47.72% of 417
+Taken at least once:33.33% of 417
+Calls executed:21.05% of 95
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+
+---------------Testing smithyCase() function-----------
+TEST 1: Deck count is more than 3
+Hand count increased by 2: FAILED
+Deck count decreased by 3: FAILED
+Discard count didn't change: PASSED
+Played cards count increased by 1: PASSED
+Discard cards didn't change: PASSED
+Deck cards didn't change: PASSED
+Hand lost 1 card and got cards from the deck: PASSED
+Smithy put in the Played cards pile: PASSED
+No other changes in game state: PASSED
+
+TEST 2: Deck count is 0
+Hand count increased by 2: FAILED
+Deck count increased by 7: FAILED
+Discard count is 0: PASSED
+Played cards count increased by 1: PASSED
+Discard cards changed to -1: PASSED
+Deck cards are ex-discard cards: PASSED
+Hand lost 1 card and got cards from the deck: PASSED
+Smithy put in the Played cards pile: PASSED
+No other changes in game state: PASSED
+File 'dominion.c'
+Lines executed:37.28% of 558
+Branches executed:49.64% of 417
+Taken at least once:34.77% of 417
+Calls executed:24.21% of 95
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+
+---------------Testing feastCase() function-----------
+TEST 1: None of the card chosen left
+Checking for infinite loops: FAILED. Kindly check for possible infinite loops in this scenario
+0 
+
+TEST 2: Chosen card to buy is too expensive
+Checking for infinite loops: FAILED. The loop check is currenly switched off for graider convinience. Previous result was 'FAILED'. Turning the check on will flood the output file with 'This card is too expensive!' message
+
+TEST 3: Enough of cards and coins
+The hand count decreased by 1: FAILED
+The discard count increased by 1: FAILED
+The discard gained one silver card: FAILED
+No change in other cards in discard: PASSED
+No change in deck count: PASSED
+No change in cards in deck: PASSED
+Feast card was removed from the hand: FAILED
+Silver supply count decreased by 1: PASSED
+No other changes in game state: PASSED
+
+Total errors in function feastCase(): 6
+
+File 'dominion.c'
+Lines executed:40.68% of 558
+Branches executed:52.04% of 417
+Taken at least once:37.65% of 417
+Calls executed:29.47% of 95
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+
+---------------Testing council_roomCase() function-----------
+TEST 1: 1 player
+Hand count increase by 3: FAILED
+Deck count decreased by 4: FAILED
+Discard count didn't change: PASSED
+Played cards count increased by 1: PASSED
+Discard cards didn't change: PASSED
+Deck cards didn't change: PASSED
+Hand got all cards from the deck: PASSED
+Number of buys increased by 1: PASSED
+Council_room put in the Played cards pile: PASSED
+No other changes in game state: PASSED
+
+TEST 2: 2 players
+Hand count increase by 3 for player1: FAILED
+Hand count increase by 1 for player2: FAILED
+Deck count decreased by 4 for player1: FAILED
+Deck count decreased by 1 for player2: FAILED
+Discard count didn't change for player1: PASSED
+Discard count didn't change for player2: PASSED
+Played cards count increased by 1: PASSED
+Discard cards didn't change for player1: PASSED
+Discard cards didn't change for player2: PASSED
+Deck cards didn't change for player1: PASSED
+Deck cards didn't change for player2: PASSED
+Hand got all cards from the deck for player1: PASSED
+Hand got all cards from the deck for player2: FAILED
+Council_room put in the Played cards pile: PASSED
+Number of buys increased by 1: PASSED
+No other changes in game state: PASSED
+
+Total errors in council_roomCase(): 7
+
+File 'dominion.c'
+Lines executed:42.65% of 558
+Branches executed:53.48% of 417
+Taken at least once:39.57% of 417
+Calls executed:33.68% of 95
+Creating 'dominion.c.gcov'
+
