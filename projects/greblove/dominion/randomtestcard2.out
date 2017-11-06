@@ -1,0 +1,38 @@
+--------------------Council_room card random testing--------------------
+Total test ran: 10000
+Tested FAILED: 10000
+Distinct failure modes: 5
+Failure 1.
+Initial game state: 
+	Player - 1, deck count - 223, hand count - 301, discard count - 377
+	Resulting hand count for other players: FAILED
+	Resulting deck count for the player: FAILED
+	Resulting deck count for the other players: FAILED
+Failure 2.
+Initial game state: 
+	Player - 2, deck count - 3, hand count - 476, discard count - 281
+	Resulting hand count for other players: FAILED
+	Resulting deck count for the player: FAILED
+	Resulting deck count for the other players: FAILED
+	No changes to the states of other players and unrelated game state: FAILED
+Failure 3.
+Initial game state: 
+	Player - 0, deck count - 424, hand count - 464, discard count - 158
+	Resulting deck count for the player: FAILED
+Failure 4.
+Initial game state: 
+	Player - 0, deck count - 4, hand count - 30, discard count - 446
+	Resulting deck count for the player: FAILED
+	No changes to the states of other players and unrelated game state: FAILED
+Failure 5.
+Initial game state: 
+	Player - 0, deck count - 2, hand count - 489, discard count - 0
+	Resulting hand count for the player: FAILED
+	Resulting deck count for the player: FAILED
+File 'dominion.c'
+Lines executed:17.56% of 558
+Branches executed:16.07% of 417
+Taken at least once:11.03% of 417
+Calls executed:14.74% of 95
+Creating 'dominion.c.gcov'
+

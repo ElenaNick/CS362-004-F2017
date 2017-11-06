@@ -1,0 +1,32 @@
+--------------------Smithy card random testing--------------------
+Total test ran: 10000
+Tested FAILED: 10000
+Distinct failure modes: 3
+Failure 1.
+Initial game state: 
+	Player - 0, deck count - 278, hand count - 314, discard count - 407
+	Resulting hand count: FAILED
+	Resulting deck count: FAILED
+	No changes to the states of other players and unrelated game state: FAILED
+Failure 2.
+Initial game state: 
+	Player - 3, deck count - 0, hand count - 26, discard count - 25
+	Resulting hand count: FAILED
+	Resulting deck count: FAILED
+	Resulting discard count: FAILED
+	All deck cards came from discard (initial deck count < 3): FAILED
+	No changes to the states of other players and unrelated game state: FAILED
+Failure 3.
+Initial game state: 
+	Player - 1, deck count - 343, hand count - 150, discard count - 1
+	Resulting hand count: FAILED
+	Resulting deck count: FAILED
+	Resulting discard count: FAILED
+	No changes to the states of other players and unrelated game state: FAILED
+File 'dominion.c'
+Lines executed:15.77% of 558
+Branches executed:14.63% of 417
+Taken at least once:9.35% of 417
+Calls executed:10.53% of 95
+Creating 'dominion.c.gcov'
+

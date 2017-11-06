@@ -1,0 +1,87 @@
+--------------------Adventurer card random testing--------------------
+Total test ran: 10000
+Tested FAILED: 10000
+Distinct failure modes: 10
+Failure 1.
+Initial game state: 
+	Player - 0, deck count - 380, hand count - 94, discard count - 323
+	Initial number of treasure cards in deck: 44
+	Resulting discard count: FAILED
+	All new cards in discard came from the deck: FAILED
+	All new cards in hand are treasure cards: FAILED
+Failure 2.
+Initial game state: 
+	Player - 2, deck count - 6, hand count - 433, discard count - 333
+	Initial number of treasure cards in deck: 0
+	Resulting deck count: FAILED
+	Resulting hand count: FAILED
+	Resulting discard count: FAILED
+Failure 3.
+Initial game state: 
+	Player - 2, deck count - 8, hand count - 196, discard count - 217
+	Initial number of treasure cards in deck: 1
+	Resulting deck count: FAILED
+	Resulting hand count: FAILED
+	Resulting discard count: FAILED
+	All new cards in hand are treasure cards: FAILED
+Failure 4.
+Initial game state: 
+	Player - 0, deck count - 310, hand count - 323, discard count - 494
+	Initial number of treasure cards in deck: 30
+	Resulting discard count: FAILED
+	All new cards in discard came from the deck: FAILED
+	All new cards in hand are treasure cards: FAILED
+	No changes to states of other players or card piles: FAILED
+Failure 5.
+Initial game state: 
+	Player - 2, deck count - 62, hand count - 277, discard count - 457
+	Initial number of treasure cards in deck: 7
+	Resulting discard count: FAILED
+	All new cards in hand are treasure cards: FAILED
+Failure 6.
+Initial game state: 
+	Player - 3, deck count - 10, hand count - 286, discard count - 15
+	Initial number of treasure cards in deck: 0
+	Resulting deck count: FAILED
+	Resulting hand count: FAILED
+	All new cards in discard came from the deck: FAILED
+Failure 7.
+Initial game state: 
+	Player - 2, deck count - 10, hand count - 175, discard count - 11
+	Initial number of treasure cards in deck: 0
+	Resulting hand count: FAILED
+	Resulting discard count: FAILED
+	All new cards in discard came from the deck: FAILED
+Failure 8.
+Initial game state: 
+	Player - 1, deck count - 31, hand count - 358, discard count - 8
+	Initial number of treasure cards in deck: 1
+	Resulting deck count: FAILED
+	Resulting hand count: FAILED
+	Resulting discard count: FAILED
+	All new cards in discard came from the deck: FAILED
+	All new cards in hand are treasure cards: FAILED
+Failure 9.
+Initial game state: 
+	Player - 2, deck count - 19, hand count - 499, discard count - 472
+	Initial number of treasure cards in deck: 1
+	Resulting deck count: FAILED
+	Resulting hand count: FAILED
+	Resulting discard count: FAILED
+	All new cards in hand are treasure cards: FAILED
+	No changes to states of other players or card piles: FAILED
+Failure 10.
+Initial game state: 
+	Player - 1, deck count - 13, hand count - 349, discard count - 32
+	Initial number of treasure cards in deck: 0
+	Resulting deck count: FAILED
+	Resulting hand count: FAILED
+	Resulting discard count: FAILED
+	All new cards in discard came from the deck: FAILED
+File 'dominion.c'
+Lines executed:12.72% of 558
+Branches executed:12.71% of 417
+Taken at least once:7.91% of 417
+Calls executed:7.37% of 95
+Creating 'dominion.c.gcov'
+

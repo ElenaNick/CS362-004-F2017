@@ -1,5 +1,21 @@
 CFLAGS = -Wall -fpic -coverage  -lm 
 
+randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer dominion.o rngs.o randomtestadventurer.c $(CFLAGS)
+	./randomtestadventurer  >> randomtestadventurer.out
+	gcov -b dominion.c >> randomtestadventurer.out
+
+randomtestcard1.out: randomtestcard1.c dominion.o rngs.o
+	gcc -o randomtestcard1 -g dominion.o rngs.o randomtestcard1.c $(CFLAGS)
+	./randomtestcard1  >> randomtestcard1.out
+	gcov -b dominion.c >> randomtestcard1.out
+
+randomtestcard2.out: randomtestcard2.c dominion.o rngs.o
+	gcc -o randomtestcard2 -g dominion.o rngs.o randomtestcard2.c $(CFLAGS)
+	./randomtestcard2  >> randomtestcard2.out
+	gcov -b dominion.c >> randomtestcard2.out
+
+
 unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c cardtest3.c cardtest4.c dominion.o rngs.o 
 	echo "-----Results for running unit tests on dominion.c-----" > unittestresults.out
 	echo "unittest1.c:" >> unittestresults.out
