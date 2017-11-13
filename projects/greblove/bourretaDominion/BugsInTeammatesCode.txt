@@ -35,3 +35,6 @@ Smithy Card.
 			for (i = 1; i < 3; i++)
 		It should be coded as following:
 			for (i = 0; i < 3; i++)		
+		Test case: initialize the game state so that player's deck consists 5 cards
+				   call the cardEffect() function for an adventurer card. 
+				   Check hand and deck counts
