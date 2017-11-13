@@ -1,0 +1,37 @@
+Bugs Report
+
+Adventurer Card.
+
+	#1. The card will pull any 2 non-gold cards from the deck instead of searching for the first 2 treasury cards
+		Description: any non-treasury card in the deck will be counted as such due to a "|| cardDrawn!=gold" 
+					clause on line 19. And a gold card will never be counted as a treasury card due to the same 
+					clause. Therefore, instead of moving first 2 treasury cards found in the deck to the hand, 
+					the first 2 cards other than gold will be moved to the hand.
+		On the line 19 of my teammate's dominion.c file:
+			if (cardDrawn == copper || cardDrawn == silver || cardDrawn != gold)
+		It should be coded as following:
+			if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+		Test case: initialize the game state so  that the player has no treasury cards in hand, deck, or discard. 
+				   call the cardEffect() function for an adventurer card. 
+				   Check hand and deck counts, as well as hand content
+			
+	#2 3 treasury cards will be moved to the hand instead of 2.
+		Description: the loop to search for a treasury card in the deck will continue untill maximum of 3 treasury cards
+					will be found due to a bug on line 12.
+		On the line 12 of my teammate's dominion.c file:
+			while(drawntreasure<=2){
+		It should be coded as following:
+			while(drawntreasure<2){					
+		Test case: initialize the game state so that player's deck consists of 5 silver cards
+				   call the cardEffect() function for an adventurer card. 
+				   Check hand and deck counts, as well as hand content				
+
+Smithy Card.
+
+	#1 Two cards are drawn from the deck instead of three
+		Description: as a result of bug in loop counter initialization on line 39, the loop is executed only 2 times.
+					Therefore, only 2 cards are drawn from the deck instead of 3.
+		On the line 39 of the dominion.c:
+			for (i = 1; i < 3; i++)
+		It should be coded as following:
+			for (i = 0; i < 3; i++)		

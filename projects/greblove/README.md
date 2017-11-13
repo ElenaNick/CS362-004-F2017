@@ -1,8 +1,6 @@
 Elena Greblova
-Assignment 3.
-dominion.c was changed:
-I found the bug I introduced in the assignment 2 and fixed it.
+Assignment 5.
+No unit tests had to be changed to test my teammate's code.
 
-Unit testing:
-unit tests for 4 functions and 4 cards were added.
-Makefile was modified to run the unit tests and collect the coverage
+Bugs found in the teammate's code are described in the ~/bourretaDominion/BugsInTeammatescode.txt
+
