@@ -45,7 +45,7 @@ int main(){
 	int* stateCheck;
 	int expected[19] = {2, 9, 100, 11, 200, 12, 300, 13};
 	int totalSleep = 10;
-	int makeLoopCheck = 0; 	
+	int makeLoopCheck = 1; 	
 	initializeGame(2, k, randSeed, &G);
 	
 	printf("\n---------------Testing feastCase() function-----------\n");

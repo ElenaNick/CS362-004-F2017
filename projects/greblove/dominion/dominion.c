@@ -700,6 +700,7 @@ int feastCase(struct gameState *state, int currentPlayer, int choice1, int temph
     x = 1;//Condition to loop on
     while( x == 1) {//Buy one card
 	  if (supplyCount(choice1, state) <= 0){
+	    x = -1;
 	    if (DEBUG)
 	      printf("None of that card left, sorry!\n");
 
@@ -709,7 +710,7 @@ int feastCase(struct gameState *state, int currentPlayer, int choice1, int temph
 	  }
 	  else if (state->coins < getCost(choice1)){
 	    printf("That card is too expensive!\n");
-
+	    x = -1;
 	    if (DEBUG){
 	      printf("Coins: %d < %d\n", state->coins, getCost(choice1));
 	    }
@@ -720,7 +721,7 @@ int feastCase(struct gameState *state, int currentPlayer, int choice1, int temph
 	      printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
 	    }
 
-	    gainCard(choice1, state, 2, currentPlayer);//Gain the card
+	    gainCard(choice1, state, 0, currentPlayer);//Gain the card
 	    x = 0;//No more buying cards
 
 	    if (DEBUG){
@@ -735,7 +736,7 @@ int feastCase(struct gameState *state, int currentPlayer, int choice1, int temph
 	  temphand[i] = -1;
     }
     //Reset Hand
-      			
+    if(x == -1) return -1; 			
     return 0;
 }
 
@@ -779,6 +780,7 @@ int council_roomCase(int currentPlayer, struct gameState *state, int handPos)
 			
     //+1 Buy
     state->numBuys++;
+
 			
     //Each other player draws a card
     for (i = 0; i < state->numPlayers; i++)
