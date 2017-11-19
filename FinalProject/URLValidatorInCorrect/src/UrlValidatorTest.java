@@ -42,8 +42,13 @@ public class UrlValidatorTest extends TestCase {
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 	   System.out.println(urlVal.isValid("http://www.amazon.com"));
-	   
-	   
+	   System.out.println(urlVal.isValid("www.amazon.com"));
+	   System.out.println(urlVal.isValid("f3tp://www.amazon.com"));
+	   System.out.println(urlVal.isValid("3ttp://www.amazon.com"));
+	   System.out.println(urlVal.isValid("http://google.com/search?query=some+query"));
+	   System.out.println(urlVal.isValid("http://google.com/search"));
+	   System.out.println(urlVal.isValid("http://google.com/search?query=some"));
+	   System.out.println(urlVal.isValid("http://google.com/search?query"));
    }
    
    
