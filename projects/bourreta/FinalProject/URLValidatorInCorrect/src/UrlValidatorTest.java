@@ -62,7 +62,6 @@ public class UrlValidatorTest extends TestCase {
        System.out.println("\t" + urlVal.isValid("http://www.amazon.com") + " -- http://www.amazon.com");
        System.out.println("\t" + urlVal.isValid("https://www.amazon.com") + " -- https://www.amazon.com");
        System.out.println("\t" + urlVal.isValid("ftp://www.amazon.com") + " -- ftp://www.amazon.com");
-       System.out.println("\t" + urlVal.isValid("www.amazon.com") + " -- www.amazon.com");
 
        System.out.println("Invalid Schemes (all values should be false: ");
        System.out.println("\t" + urlVal.isValid("http:///www.amazon.com") + " -- http:///www.amazon.com");
@@ -88,7 +87,37 @@ public class UrlValidatorTest extends TestCase {
        System.out.println("\t" + urlVal.isValid("https://www.ama zon.com") + " -- http://www.ama zon.com");
        System.out.println("\t" + urlVal.isValid("http://128.193.40.256") + " -- http://128.193.40.256");
    }
-     
+   
+	
+   public void testOtherPartitions()
+   {
+       UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+       System.out.println("-------- TEST PARTITION:  TLD ----------");
+       System.out.println("Valid TLD (value should be true): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.com") + " -- http://www.amazon.com");
+       System.out.println("Invalid TLD (value should be false): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.ak") + " -- http://www.amazon.ak");
+
+       System.out.println("-------- TEST PARTITION:  PORT----------");
+       System.out.println("Valid TLD (value should be true): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.com:80") + " -- http://www.amazon.com:36");
+       System.out.println("Invalid TLD (value should be false): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.com:655300") + " -- http://www.amazon.com:65530");
+
+       System.out.println("-------- TEST PARTITION:  PATH----------");
+       System.out.println("Valid TLD (value should be true): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.com/somepath") + " -- http://www.amazon.com/somepath");
+       System.out.println("Invalid TLD (value should be false): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.com/some path") + " -- http://www.amazon.com/some path");
+       
+       System.out.println("-------- TEST PARTITION:  QUERY----------");
+       System.out.println("Valid TLD (value should be true): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.com/somepath?somequery") + " -- http://www.amazon.com/somepath?somequery");
+       System.out.println("Invalid TLD (value should be false): ");
+       System.out.println("\t" + urlVal.isValid("http://www.amazon.com/somepath?some query") + " -- http://www.amazon.com/somepath?some query");
+       
+   }
+	
    public void testIsValid()
    {
        UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
